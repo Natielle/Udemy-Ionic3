@@ -1,0 +1,58 @@
+<!--
+  Generated template for the IntroPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- Tirando o header
+<ion-header>
+
+  <ion-navbar>
+    <ion-title> Intro </ion-title> <!-- Altera o título da página --
+  </ion-navbar>
+
+</ion-header>-->
+
+<!-- Altera o conteúdo da página -->
+<ion-content> <!-- <ion-content padding> Se tirar o padding desse comando não haverá uma margem na tela do app-->
+
+
+  <!-- SLIDES -->
+  <ion-slides pager>
+      
+      <!-- 1° slide -->
+      <ion-slide class="slide_image">
+        <img src="assets/imgs/slide1.png" alt="">
+        <h2>Meu app TOP...</h2>
+        <br>
+
+        <div>
+          <p> Este app tera funcoes incriveis! Ele foi feito para impressionar as novinhas. </p>
+          <p> Ficou com a pulga atras da orelha? 
+            <!-- Evento de click chama uma função. -->
+            <a (click)="irParaTabsPage()"> <strong> Veja mais...</strong>  </a>
+          </p>
+        </div>
+
+      </ion-slide>
+    
+      <!-- 2° slide -->
+      <ion-slide class="slide_image">
+        <img src="assets/imgs/slide2.png" alt="">
+        <h2>Slide 2</h2>
+      </ion-slide>
+    
+      <!-- 3° slide -->
+      <ion-slide class="slide_image">
+        <img src="assets/imgs/slide3.png" alt="">
+        <h2>Slide 3</h2>
+
+        <!-- Evento de click chama uma função. -->
+        <a (click)="irParaTabsPage()">Continuar</a>
+
+      </ion-slide>
+
+    </ion-slides>
+
+
+</ion-content>

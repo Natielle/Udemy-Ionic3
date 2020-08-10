@@ -1,0 +1,54 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+// ----------------------- Variáveis -----------------------
+$var: 2;
+$tamanhoFonte: 1.5;
+$corFonte: white;
+$corFundo: black;
+
+
+.texto{
+    font-size: $tamanhoFonte em;
+    font-style: bold;
+    color: green;
+    background-color: white;
+}
+
+.zerada{
+    font-style: normal;
+}
+.dark-theme{
+    color: white;
+    background-color: rgba(34, 34, 34, 0.986);
+}
+.light-theme{
+    color: black;
+    background-color: rgb(230, 225, 169);
+}
+
+// Criando um mixin
+@mixin configuracao($tamFonte, $cFonte, $cFundo){
+    font-size: $tamFonte px;
+    color: $cFonte;
+    background-color: $cFundo;
+}
+
+.texto-mixin{
+    @include configuracao($tamanhoFonte, $corFonte, $corFundo); //Importando um mixin. (É como se o código do mixin fosse colocado aqui)
+}

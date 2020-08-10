@@ -1,0 +1,63 @@
+<!--
+  Generated template for the FilmeDetalhesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detalhes do filme</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <!-- Faz um if com a variavel filme (que está no .ts), se ela existir o card é criado. Se a variável filme for igual a null, não entra no if e o card não é criado. -->
+  <ion-card *ngIf="filme"> <!-- É necessário ter o if para não dar problema quando for buscar o titulo, data etc da lista de filme -->
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/perfil.jpg">
+      </ion-avatar>
+
+      <!-- Para acrescentar estilo em css, basta escrevê-lo no arquivo feed.sccs e não precisa importar nenhum arquivo. -->
+      <h2 class="filmes_title"> {{ filme.original_title }} </h2>
+      <!-- Dentro do pacote de dados recebidos, temos uma variavel chamada "original_title", por isso utilizamos ela para obter o nome do filme. -->
+      <!-- Em angular, {{}} significa que o que está dentro das chaves precisa ser executado, seja uma função ou variável. -->
+      <p class="filmes_date"> {{ filme.release_date }} </p>
+      <!-- Dentro do pacote de dados recebidos, temos uma variavel chamada "release_date", por isso utilizamos ela para obter a data do filme. -->
+    </ion-item>
+
+    <!-- O caminho da imagem depende de cada provedor, no caso desse provedor ele disponibiliza o caminho no próprio site:
+        https://developers.themoviedb.org/3/getting-started/images -->
+    <!-- A "variável backdrop_path" tem como conteúdo o nome da imagem do filme. -->
+    <img [src]="'https://image.tmdb.org/t/p/w500/' + filme.backdrop_path">
+
+    <ion-card-content>
+      <p> {{ filme.overview }} </p>
+      <!-- overview armazena a descrição do filme -->
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div> {{ objeto_filmes.qntd_likes }} likes </div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="text"></ion-icon>
+          <div> {{ objeto_filmes.qntd_comment }} comments </div>
+        </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          {{ objeto_filmes.time_comment }}
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

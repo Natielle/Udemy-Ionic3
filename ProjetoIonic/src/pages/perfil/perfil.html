@@ -1,0 +1,60 @@
+<!--
+  Generated template for the PerfilPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+
+    <!-- Adicionando o botão do sidemenu -->
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Perfil</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<!--<ion-content padding [ngStyle]="{'font-size': tamanhoDaFonte + 'px' }">-->
+<ion-content padding class="zerada">
+  <ion-list>
+    <ion-list-header>
+      Adjust Text
+    </ion-list-header>
+    <ion-item>
+      <!-- 
+        snaps= true, deixa o valor não contínuo visualmente. false, deixa o valor contínuo apenas visualmente. 
+        pin= true, mostra o valor atual do intervalo em tempo real. false, não mostra nada do valor "selecionado".
+        step é o tamanho do intervalo que os valores irão "pular".
+      -->
+      <ion-range min="8" max="32" step="4" snaps="true" pin="true" [(ngModel)]="tamanhoDaFonte">
+        <ion-label range-left class="small-text">a</ion-label>
+        <ion-label range-right>A</ion-label>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+
+  Valor do ajust text: {{tamanhoDaFonte}} <br>
+  <b class="">
+      Meu perfil
+  </b>
+  
+  <p class="texto">
+    Uam asdf clikasd aksdj
+  </p>
+  <button ion-button round (click)="alteraTexto('red', tamanhoDaFonte)"> 
+    Salvar
+  </button>
+
+  <button ion-button round (click)="alteraTema('claro')"> 
+    Tema claro
+  </button>
+
+  <button ion-button round (click)="alteraTema('escuro')"> 
+    Tema escuro
+  </button>
+</ion-content>

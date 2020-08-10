@@ -1,0 +1,133 @@
+<!--
+  Generated template for the FeedPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Titulo do Feed</ion-title> <!-- Altera o título da página -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding> <!-- Altera o conteúdo da página -->
+
+  <!-- 1° Social Cards -->
+  <ion-card>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../assets/imgs/perfil.jpg">
+        </ion-avatar>
+
+        <!-- Para acrescentar estilo em css, basta escrevê-lo no arquivo feed.sccs e não precisa importar nenhum arquivo. -->
+        <h2 class="feed_title">Natielle do html</h2>
+        <p class="feed_date">November 5, 1955</p>
+      </ion-item>
+    
+      <img src="../../assets/imgs/PC.jpg"> 
+    
+      <ion-card-content>
+        <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+      </ion-card-content>
+    
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>12 Likes</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="text"></ion-icon>
+            <div>4 Comments</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <ion-note>
+            11h ago
+          </ion-note>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+  <!-- 2° Social Cards -->
+  <ion-card>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/perfil2.jpeg">
+      </ion-avatar>
+      <h2> {{ nome_usuario }} </h2> <!-- Em angular, {{}} significa que o que está dentro das chaves precisa ser executado, seja uma função ou variável. -->
+      <p>November 5, 1955</p>
+    </ion-item>
+  
+    <img src="../../assets/imgs/localFesta.png">
+  
+    <ion-card-content>
+      <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+    </ion-card-content>
+  
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>12 Likes</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>4 Comments</div>
+        </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          11h ago
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <!-- 3° Social Cards -->
+  <ion-card>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../assets/imgs/perfil.jpg">
+        </ion-avatar>
+
+        <!-- Para acrescentar estilo em css, basta escrevê-lo no arquivo feed.sccs e não precisa importar nenhum arquivo. -->
+        <h2 class="feed_title"> {{ objeto_feed.titulo }} </h2> <!-- Em angular, {{}} significa que o que está dentro das chaves precisa ser executado, seja uma função ou variável. -->
+        <p class="feed_date"> {{ objeto_feed.data }} </p>
+      </ion-item>
+    
+      <img src="../../assets/imgs/PC.jpg"> 
+    
+      <ion-card-content>
+        <p> {{ objeto_feed.descricao }} </p>
+      </ion-card-content>
+    
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div> {{ objeto_feed.qntd_likes }} likes </div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="text"></ion-icon>
+            <div> {{ objeto_feed.qntd_comment }} comments </div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <ion-note>
+              {{ objeto_feed.time_comment }} 
+          </ion-note>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+</ion-content>

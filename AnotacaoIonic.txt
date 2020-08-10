@@ -1,0 +1,9 @@
+declaration e entryComponents carregam os primeiros componentes que tem que ser carregados assim que o app é executado.
+
+o import carrega o componente quando o mesmo é importado
+
+Carregar o provider no app.module.ts faz a importação do provedor para todas as paginas/componentes
+Bos pr´tica é colocar o provider dentro da página que vai utilizá-lo.
+@Component({
+providers: [nome_provider]
+})

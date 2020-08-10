@@ -1,0 +1,156 @@
+
+	# Verificar se os componentes necessários estão instalados (executar no prompt):
+	node -v
+	npm -v
+	ionic -v
+	cordova -v
+
+
+	# Cria um novo aplicativo com um template específico.
+	ionic start nome_app nome_template #nome_template poderia ser blank(em branco), tabs ou sidemenu(com menu esquerdo superior), por exemplo.
+
+
+	# Inicia um servidor local para rodar seu aplicativo.
+	ionic serve #Para utilizar esse comando, é necessário estar dentro da pasta do seu projeto (pois esse comando roda o app)
+
+
+	# abrindo projeto pelo terminal com o Visual Studio Code
+	code . # Abre o projeto que vc está no diretorio pelo Visual Studio Code
+
+
+	# Criando uma página
+	ionic generate page nome_pagina
+	
+	# Criando um provider
+	ionic generate provider nome_do_provider
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	- Componentes são compostos por arquivos.
+	- Arquivos .ts configuram os componentes. (páginas, funcionalidades, etc)
+	- Arquivos .html armazenam o conteúdo do componente.
+	- Arquivos .sccs armazenam o estilo do componente.
+	- Arquivos .module declaram outros componentes ou outras páginas
+
+	Na pasta scr/app podemos fazer as configurações iniciais
+	A pasta scr/pages armazena as páginas
+	No arquivo config.xml é possível mudar o nome do app que fica no dispositivo em (<name> nome_do_app </name>)
+	No arquivo app.component.ts é possível alterar a primeira página que roda no aplicativo. (rootPage: any = TabsPage), TabsPage é o nome da classe da página (fica no arquivo tabs.ts)
+
+	OBS GITHUB: Ao baixar algum projeto do github que tenha o arquivo package.json é necessário rodar o comando "npm install" dentro da pasta do projeto, pois ao colocar no github o arquivo .gitignore não inclui as bibliotecas no upload. (o .gitignore armazena o que será ignorado ao fazer o upload no git)
+
+
+	***************
+	OBS IMPORTANTE: CASO O APP NÃO ESTEJA ATUALIZANDO AUTOMATICAMENTE OU NÃO ESTEJA RECONHECENDO ALTERAÇÕES DO CÓDIGO AO ESTAR EXECUTANDO, SE LIMPAR A MEMÓRIA CACHE PODE SER QUE VOLTE A FUNCIONAR. Para limpar a cache é só apertar CTRL+SHIFT+R.
+	***************
+
+	--------------------------------------------------------------------------------
+	JSON: é um arquivo de texto que tem uma estrutura utilizada para transmitir informações através de pares atributo-valor. (como se fosse duas colunas e excel, mas em uma fica o nome do atributo e na outra fica o conteúdo desse atributo)
+	
+	#- Exemplo de código JSON:
+	{//Indica um objeto
+		idade: 27,
+		nome: "Natielle Goncalves", //Para escrever string tem que colocar aspas
+		enderecos: [ //Indica um vetor
+			{//Indica objeto
+				titulo: "casa",
+				endereco: "Rua teste 1"
+			},
+			{//Indica objeto
+				titulo: "trabalho",
+				endereco: "Rua teste 2"
+			}
+		],
+		profissao: "Desenvolvedor/Instrutor"
+	};
+
+	#- Exemplo de declaração de um Json:
+	var objeto = {//Indica um objeto
+		idade: 27,
+		nome: "Natielle Goncalves", //Para escrever string tem que colocar aspas
+		enderecos: 
+		[ //Indica um vetor
+			{//Indica objeto
+				titulo: "casa",
+				endereco: "Rua teste 1"
+			},
+			{//Indica objeto
+				titulo: "trabalho",
+				endereco: "Rua teste 2"
+			}
+		],
+		profissao: "Desenvolvedor/Instrutor"
+	};
+
+	#- Exemplos de acesso ao conteúdo do json: (comandos a serem executados para acessar determinados conteúdos)
+	objeto.nome 
+	objeto.idade
+	objeto.enderecos[0].titulo
+	objeto.enderecos[1].endereco
+	--------------------------------------------------------------------------------
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	# Adicionando a página no projeto
+		-Criar uma página
+		-Abrir o arquivo .module.ts da página 
+		-Copiar o nome da classe, é algo como: "NomeDaPaginaPageModule"
+		-Ir no arquivo app.module.ts (src/app/)
+		-Colar o nome da classe dentro do imports:[ ~ COLAR AQUI ~ ]
+		-Após isso, vai aparecer um sublinhado vermelho no que vc colou e uma lâmpada do lado esquerdo do texto, é só clicar nela e importar o que ela estiver mandando. Mas caso não esteja usando o VS Code é só importar o seguinte código: "import { NomeDaPaginaPageModule } from '../pages/nomeDaPagina/nomeDaPagina.module';"
+	
+		# Caso não tenha o .module.ts
+			-Abrir o arquivo app.module.ts
+			-Incluir o "NomeDaPaginaPage" dentro do bloco de código do declarations:[NomeDaPaginaPage] e do entryComponents:[NomeDaPaginaPage]
+
+
+	# Adicionando a página no layout do tabs (menuzinho no canto inferior da tela)
+		-Adicionar a página no projeto (tópico de cima)
+		-Configurar a pagina no arquivo .ts, assim: tab4Root = NomeDaPaginaPage;. Após isso, fazer a importação da página. 
+		-Incluir a nova página no arquivo .html, assim: "<ion-tab [root]="tab4Root" tabTitle="Nome_da_pagina" tabIcon="paper"></ion-tab> "
+	
+	# Executar o app num emulador
+	-Abre o android studio e abre o emulador dele (telinha do android)
+	-Executar o comando: 
+		ionic cordova plataform add android (se a plataforma for android)
+		ionic cordova plataform add ios (se a plataforma for ios)		
+	-Executar o comando: ionic cordova run --emulator
+	(demora um pouco pra rodar mesmo)
+
+	TERMINAR DE VER COMO FAZ PRA GERAR O .APK E COMO FAZ PRA RODAR NO EMULADOR
+
+
+	# Alterar nome do aplicativo e adicionar icone
+		Basta alterar o arquivo index.html
+
+	# Gerando .apk
+		Abrir projeto no visual studio Code
+		ionic cordova platform add android (comando demora um pouquinho e apos esse comando é criada uma pasta chamada "platforms")
+		ionic cordova build android
+		Caminho que o apk estara: "platforms/android/build/outputs"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
